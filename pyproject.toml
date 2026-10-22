@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simplibs-style"
+version = "0.1.0"
+description = "A lightweight terminal styling and ANSI color library for Python applications."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+keywords = [
+    "ansi",
+    "terminal",
+    "colors",
+    "formatting",
+    "style",
+    "cli",
+    "simplibs",
+    "simplibs-style",
+    "developer-tools",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Terminals",
+    "Typing :: Typed",
+]
+dependencies = [
+    "simplibs-exception>=1.1.4",
+]
+
+[[project.authors]]
+name = "Dalibor Sova (Sudip2708)"
+email = "daliborsova@seznam.cz"
+
+[project.urls]
+Homepage = "https://github.com/simplibs/simplibs-style"
+Repository = "https://github.com/simplibs/simplibs-style"
+Issues = "https://github.com/simplibs/simplibs-style/issues"
+Changelog = "https://github.com/simplibs/simplibs-style/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0",          # the `subtests` fixture is built in since pytest 9.0
+    "pytest-cov>=5.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v -rs"
+
+[tool.coverage.run]
+branch = true
+source = ["simplibs.style"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"simplibs.style" = ["py.typed"]
